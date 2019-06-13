@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Create Contact Form</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <mat-label>Contact Name</mat-label>
+        <input matInput placeholder="Contact Name" [(ngModel)]="contactName" name="contactName" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Contact Address</mat-label>
+        <textarea [(ngModel)]="contactAddress" matInput></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input [value]="date.value" matInput [matDatepicker]="myPicker" placeholder="date">
+        <mat-datepicker-toggle matSuffix [for]="myPicker"></mat-datepicker-toggle>
+        <mat-datepicker #myPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Source of Contact</mat-label>
+        <mat-select [(value)]="contactSource" placeholder="Source of contact">
+          <mat-option value="email">Email</mat-option>
+          <mat-option value="website">Website</mat-option>
+          <mat-option value="direct">Direct</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- put buttons here -->
+    <mat-card-actions>
+      <button mat-raised-button (click)="saveContact()" color="primary">Save Contact</button>
+    </mat-card-actions>
+  </mat-card-actions>
+</mat-card>
